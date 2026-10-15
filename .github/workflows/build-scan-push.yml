@@ -27,6 +27,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - uses: hadolint/hadolint-action@v3.1.0
+        name: hadolint
+        with:
+          dockerfile: Dockerfile
+
       - name: Set image details
         id: image
         shell: bash
